@@ -6,16 +6,19 @@ import { AuthProvider } from "./context/AuthContext.jsx";
 import { MovieProvider } from "./context/MovieContext.jsx";
 import { WishlistProvider } from "./context/WishListContext.jsx";
 import { Toaster } from "react-hot-toast";
+import { ModalProvider } from "./context/ModalContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <BrowserRouter>
         <AuthProvider>
-            <MovieProvider>
-                <WishlistProvider>
-                    <App />
-                    <Toaster position="bottom-center" />
-                </WishlistProvider>
-            </MovieProvider>
+            <ModalProvider>
+                <MovieProvider>
+                    <WishlistProvider>
+                        <App />
+                        <Toaster position="bottom-center" />
+                    </WishlistProvider>
+                </MovieProvider>
+            </ModalProvider>
         </AuthProvider>
     </BrowserRouter>
 );

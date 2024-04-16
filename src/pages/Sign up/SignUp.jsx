@@ -13,6 +13,7 @@ const SignUp = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         register();
+        setEmail("");
     };
 
     useEffect(() => {
@@ -24,7 +25,7 @@ const SignUp = () => {
         }
     }, [error, success]);
     return (
-        <div className="sm:w-420 flex-center flex-col">
+        <div className="w-full sm:w-420 flex-center flex-col ">
             <Logo />
             <div className="mt-10 text-center">
                 <h3 className="h3-semibold md:h2-semibold ">
@@ -39,7 +40,7 @@ const SignUp = () => {
                     <FormContainer>
                         <Label label={"Email"} />
                         <Input
-                            type="text"
+                            type="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                         />

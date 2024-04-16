@@ -5,6 +5,7 @@ import SearchBar from "../searchbar/SearchBar";
 import { useState } from "react";
 import Hamburger from "../hamburger/Hamburger";
 import SideNav from "../mobile/SideNav";
+import MobileSearchBar from "../mobile/MobileSearchBar";
 
 const Navbar = () => {
     const { logOut, isAuthenticated } = useAuth();
@@ -17,7 +18,7 @@ const Navbar = () => {
                     <div className="sm:pr-10">
                         <Logo />
                     </div>
-                    <div className="hidden sm:flex items-center gap-10">
+                    <div className="hidden lg:flex items-center gap-10">
                         <NavTag to="/">Home</NavTag>
                         <NavTag to="/my-wishlist">wishlist</NavTag>
                         {isAuthenticated ? (
@@ -27,15 +28,17 @@ const Navbar = () => {
                         )}
                     </div>
                 </div>
-                <div className="hidden sm:flex-center gap-10">
+                <div className="hidden lg:flex-center gap-10">
                     <SearchBar />
                 </div>
-                <Hamburger
-                    handleClick={() =>
-                        setIsMobileMenuActive(!isMobileMenuActive)
-                    }
-                    isActive={isMobileMenuActive}
-                />
+                <div className="flex-center lg:hidden gap-4" id="search-bar">
+                    <MobileSearchBar />
+
+                    <Hamburger
+                        isActive={isMobileMenuActive}
+                        handleClick={(val) => setIsMobileMenuActive(val)}
+                    />
+                </div>
             </nav>
             <SideNav
                 isActive={isMobileMenuActive}

@@ -1,9 +1,11 @@
 const CardLoader = () => {
-    return <div className="h-72 w-60 rounded-xl bg-green-800" />;
+    return (
+        <div className="h-56 w-40 sm:h-64 sm:w-60  lg:h-72 lg:w-60 rounded-xl bg-dark-4" />
+    );
 };
 const Loader = () => {
     return (
-        <div className="grid grid-cols-5 gap-10">
+        <div className="grid-layout">
             {Array(10)
                 .fill(0)
                 .map((_, index) => (

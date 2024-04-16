@@ -7,10 +7,23 @@ import SignUp from "./pages/Sign up/SignUp.jsx";
 import RootLayout from "./layouts/_root/RootLayout.jsx";
 import MyWishlist from "./pages/My wishlist/MyWishlist.jsx";
 import ProtectedRoute from "./utils/ProtectedRoute";
+import Modal from "./components/modal/Modal.jsx";
+import { useModalContext } from "./context/ModalContext.jsx";
+import { useEffect } from "react";
 
 function App() {
+    const { isModalOpen } = useModalContext();
+
+    useEffect(() => {
+        if (isModalOpen) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "auto";
+        }
+    }, [isModalOpen]);
     return (
         <main className="flex w-full">
+            <Modal />
             <Routes>
                 {/* Auth Routes */}
                 <Route element={<AuthLayout />}>

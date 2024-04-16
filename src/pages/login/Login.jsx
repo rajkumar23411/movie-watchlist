@@ -13,6 +13,7 @@ const Login = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         login();
+        setEmail("");
     };
 
     useEffect(() => {
@@ -24,7 +25,7 @@ const Login = () => {
         }
     }, [error, success]);
     return (
-        <div className="sm:w-420 flex-center flex-col">
+        <div className="w-full sm:w-420 flex-center flex-col">
             <Logo />
             <div className="mt-10 text-center">
                 <h3 className="h3-semibold md:h2-semibold ">

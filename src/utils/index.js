@@ -1,3 +1,5 @@
+import propType from "prop-types";
+
 export const API_URL = `https://www.omdbapi.com/?apikey=${
     import.meta.env.VITE_MOVIE_API_KEY
 }&plot=full`;
@@ -13,8 +15,14 @@ export const NavLinkTags = [
         title: "Wishlist",
         to: "/my-wishlist",
     },
-    {
-        title: "Login",
-        to: "/login",
-    },
 ];
+
+export const movieProps = {
+    movie: propType.shape({
+        Poster: propType.string,
+        Title: propType.string,
+        Type: propType.string,
+        Year: propType.string,
+        imdbID: propType.string,
+    }),
+};

@@ -5,7 +5,7 @@ import { useMovieContext } from "../../context/MovieContext";
 import { useWishlistContext } from "../../context/WishListContext";
 import toaster from "react-hot-toast";
 const Home = () => {
-    const { isLoading, movie } = useMovieContext();
+    const { isLoading, movies, loadMore, totalResults } = useMovieContext();
     const { error, success } = useWishlistContext();
 
     useEffect(() => {
@@ -21,10 +21,20 @@ const Home = () => {
             {isLoading ? (
                 <Loader />
             ) : (
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10 place-items-center justify-center">
-                    {movie?.map((m) => (
-                        <MovieCard key={m.imdbID} movie={m} />
-                    ))}
+                <div className="flex-center flex-col gap-10">
+                    <div className="grid-layout">
+                        {movies?.map((m) => (
+                            <MovieCard key={m.imdbID} movie={m} />
+                        ))}
+                    </div>
+                    {totalResults > movies?.length && movies.length !== 0 && (
+                        <button
+                            onClick={loadMore}
+                            className="bg-dark-4 text-white px-4 py-2 rounded-md cursor-pointer text-sm sm:text-base"
+                        >
+                            Load more
+                        </button>
+                    )}
                 </div>
             )}
         </div>

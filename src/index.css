@@ -119,23 +119,29 @@
     .custom-scrollbar::-webkit-scrollbar-thumb:hover {
         background: #7878a3;
     }
+
+    /* GRID */
+
+    .grid-layout {
+        @apply grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-6 xl:gap-10 place-items-center justify-center;
+    }
 }
 
 /* BUTTON */
 .btn-primary {
-    @apply bg-primary-500 w-full rounded-md text-white cursor-pointer hover:bg-primary-600;
+    @apply bg-primary-500 w-full rounded-md text-white cursor-pointer text-sm sm:text-base hover:bg-primary-600;
 }
 
 .btn-secondary {
-    @apply border border-primary-500/90 w-full rounded-md text-white cursor-pointer  hover:bg-gray-900;
+    @apply border border-gray-400 w-full rounded-md text-white text-sm sm:text-base cursor-pointer  hover:bg-gray-900;
 }
 
 .btn-sm {
-    @apply h-9;
+    @apply h-8;
 }
 .btn-md {
-    @apply h-12;
+    @apply h-11;
 }
 .btn-lg {
-    @apply h-14;
+    @apply h-12;
 }

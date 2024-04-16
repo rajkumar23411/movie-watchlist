@@ -11,10 +11,7 @@ const useWishlist = () => {
             return null;
         }
         const users = JSON.parse(localStorage.getItem("users"));
-        console.log(users);
-        const findUser = users.find((user) => users.email === user.email);
-
-        return;
+        const findUser = users.find((u) => u.email === user.email);
         if (findUser) {
             // check if movie is already added in the wishlist
             const isMovieAlreadyAdded = findUser.wishlist.find(

@@ -20,9 +20,9 @@ const MyWishlist = () => {
     }, []);
 
     return (
-        <div className="flex-center py-10">
+        <div className="flex-center py-4 sm:py-6 md:py-10">
             {wishlist?.length > 0 ? (
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 sm:gap-6 md:gap-8 lg:gap-10 place-items-center justify-center">
+                <div className="grid-layout">
                     {wishlist?.map((m, i) => (
                         <WishlistCard key={i} movie={m} />
                     ))}

@@ -4,11 +4,21 @@ import useFetch from "../utils/fetchData";
 const MovieContext = createContext();
 
 const MovieProvider = ({ children }) => {
-    const [query, setQuery] = useState("hacker");
-    const { isLoading, error, movie } = useFetch(query);
+    const [query, setQuery] = useState("");
+    const { isLoading, error, movies, loadMore, totalResults } = useFetch(
+        query || "avenger"
+    );
     return (
         <MovieContext.Provider
-            value={{ query, movie, setQuery, isLoading, error }}
+            value={{
+                query,
+                movies,
+                setQuery,
+                isLoading,
+                error,
+                totalResults,
+                loadMore,
+            }}
         >
             {children}
         </MovieContext.Provider>

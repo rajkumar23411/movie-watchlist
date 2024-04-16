@@ -1,11 +1,14 @@
 import { NavLink, useLocation } from "react-router-dom";
 import Logo from "../logo/Logo";
 import { NavLinkTags } from "../../utils";
+import { useAuth } from "../../context/AuthContext";
 
 const SideNav = ({ isActive, handleClick }) => {
     const location = useLocation().pathname;
+    const { logOut, isAuthenticated } = useAuth();
     return (
         <div
+            id="side-nav"
             className={`fixed 
                 ${
                     isActive
@@ -30,6 +33,15 @@ const SideNav = ({ isActive, handleClick }) => {
                         </NavLink>
                     );
                 })}
+                {isAuthenticated ? (
+                    <div onClick={logOut} className="text-white px-6 py-2">
+                        Logout
+                    </div>
+                ) : (
+                    <NavLink to="/login" className={"text-white px-6 py-2"}>
+                        Login
+                    </NavLink>
+                )}
             </div>
         </div>
     );

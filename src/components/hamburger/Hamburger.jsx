@@ -1,24 +1,21 @@
 const Hamburger = ({ handleClick, isActive }) => {
     return (
-        <button
-            onClick={handleClick}
-            className={`flex flex-col ${isActive ? "gap-0" : "gap-1"} `}
-        >
-            <div
-                className={`h-[0.1rem] w-6 bg-rose-50 ${
-                    isActive ? "transform -rotate-45 origin-center " : ""
-                } transition-all duration-100 ease-linear`}
-            />
-            <div
-                className={`h-[0.1rem] w-6 bg-rose-50 ${
-                    isActive ? "hidden" : ""
-                }`}
-            />
-            <div
-                className={`h-[0.1rem] w-6 bg-rose-50 ${
-                    isActive ? "transform rotate-45 origin-center " : ""
-                } transition-all duration-100 ease-linear`}
-            />
+        <button className="transition-all duration-100 ease-in-out">
+            {isActive ? (
+                <img
+                    src="/assets/icons/close.svg"
+                    alt="close"
+                    onClick={() => handleClick(false)}
+                    className="h-5 w-5 text-white"
+                />
+            ) : (
+                <img
+                    src="/assets/icons/hamburger.svg"
+                    alt="hamburger"
+                    className="h-8 w-8"
+                    onClick={() => handleClick(true)}
+                />
+            )}
         </button>
     );
 };
