@@ -42,7 +42,7 @@ Create a simple movie watchlist app that allows multiple users to search for mov
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/manikangkandas/techwondoe.git
+   git clone https://github.com/rajkumar23411/movie-wishlist.git
    ```
 2. Install packages using NPM or YARN
 
@@ -68,11 +68,12 @@ Create a simple movie watchlist app that allows multiple users to search for mov
 
 ## 🖥️ Developed By
 
-**Rajkumar Kalita © 2023** 
+**Rajkumar Kalita © 2024** 
+
 
 ## 🤝 Contact
 
 Author Info - [@rajkumar.kalita](https://www.linkedin.com/company/authenticatedotcom/) - rajkumar.kalita@yahoo.com
 <br />
-Project github repo Link - [Watchlist](https://github.com/manikangkandas/techwondoe)
+Project github repo Link - [Watchlist](https://github.com/rajkumar23411/movie-wishlist.git)
 Live link - [Watchlist](https://manikangkandas.github.io/techwondoe/)
