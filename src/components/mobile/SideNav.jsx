@@ -6,9 +6,7 @@ import { useAuth } from "../../context/AuthContext";
 const SideNav = ({ isActive, handleClick }) => {
     const location = useLocation().pathname;
     const { logOut, isAuthenticated } = useAuth();
-    function handleLogoutClick() {
-        logOut();
-    }
+
     return (
         <div
             id="side-nav"
@@ -38,7 +36,7 @@ const SideNav = ({ isActive, handleClick }) => {
                 })}
                 {isAuthenticated ? (
                     <button
-                        onClick={handleLogoutClick}
+                        onClick={logOut}
                         className="text-white px-6 py-2 w-max"
                     >
                         Logout
