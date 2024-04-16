@@ -18,7 +18,7 @@ const useWishlist = () => {
                 (item) => item.imdbID === movie.imdbID
             );
             if (isMovieAlreadyAdded) {
-                setError("Already added in your wishlist");
+                setError("Already added in your watchlist");
                 return null;
             }
             findUser.wishlist.push(movie);
@@ -33,12 +33,12 @@ const useWishlist = () => {
             localStorage.setItem("users", JSON.stringify(users));
             setWishlist(newUser.wishlist);
         }
-        setSuccess("Movie added to wishlist");
+        setSuccess("Movie added to watchlist");
     };
 
     const removeFromWishlist = (id) => {
         if (!isAuthenticated) {
-            setError("Please login to remove from wishlist");
+            setError("Please login to remove from watchlist");
             return null;
         }
         const users = JSON.parse(localStorage.getItem("users"));
@@ -49,7 +49,7 @@ const useWishlist = () => {
             );
             localStorage.setItem("users", JSON.stringify(users));
             setWishlist(findUser.wishlist);
-            setSuccess("Movie removed from wishlist");
+            setSuccess("Movie removed from watchlist");
         }
     };
 

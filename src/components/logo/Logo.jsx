@@ -8,7 +8,7 @@ const Logo = () => {
                 alt="logo"
                 className="h-8 object-contain invert pb-1"
             />
-            <h1 className="base-semibold sm:h3-semibold">MovieFlix</h1>
+            <h1 className="base-semibold sm:h3-semibold">Watchlist</h1>
         </Link>
     );
 };

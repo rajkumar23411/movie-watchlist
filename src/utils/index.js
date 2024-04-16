@@ -12,8 +12,8 @@ export const NavLinkTags = [
         to: "/",
     },
     {
-        title: "Wishlist",
-        to: "/my-wishlist",
+        title: "Watchlist",
+        to: "/my-watchlist",
     },
 ];
 

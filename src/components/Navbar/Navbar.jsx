@@ -20,7 +20,7 @@ const Navbar = () => {
                     </div>
                     <div className="hidden lg:flex items-center gap-10">
                         <NavTag to="/">Home</NavTag>
-                        <NavTag to="/my-wishlist">wishlist</NavTag>
+                        <NavTag to="/my-watchlist">Watchlist</NavTag>
                         {isAuthenticated ? (
                             <NavTag onClick={logOut}>Logout</NavTag>
                         ) : (

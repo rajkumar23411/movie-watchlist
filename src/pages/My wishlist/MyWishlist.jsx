@@ -7,20 +7,25 @@ const MyWishlist = () => {
 
     useEffect(() => {
         getMyWishlist();
-    });
+    }, []);
 
     return (
         <div className="flex-center py-4 sm:py-6 md:py-10">
             {wishlist?.length > 0 ? (
-                <div className="grid-layout">
-                    {wishlist?.map((m, i) => (
-                        <WishlistCard key={i} movie={m} />
-                    ))}
+                <div className="flex flex-col gap-4">
+                    <h1 className="base-medium sm:h3-medium md:h2-semibold">
+                        My Watchlist ({wishlist?.length})
+                    </h1>
+                    <div className="grid-layout">
+                        {wishlist?.map((m, i) => (
+                            <WishlistCard key={i} movie={m} />
+                        ))}
+                    </div>
                 </div>
             ) : (
                 <div className="h-[34rem] flex-center flex-col gap-10">
                     <h1 className="h3-semibold">
-                        No movies added to the wishlist
+                        No movies added to the watchlist
                     </h1>
                     <Link
                         to="/"

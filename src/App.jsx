@@ -45,7 +45,7 @@ function App() {
                     <Route index element={<Home />} />
                     <Route path="/movie/:id" element={<Home />} />
                     <Route
-                        path="/my-wishlist"
+                        path="/my-watchlist"
                         element={
                             <ProtectedRoute>
                                 <MyWishlist />
