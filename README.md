@@ -76,4 +76,4 @@ Create a simple movie watchlist app that allows multiple users to search for mov
 Author Info - [@rajkumar.kalita](https://www.linkedin.com/company/authenticatedotcom/) - rajkumar.kalita@yahoo.com
 <br />
 Project github repo Link - [Watchlist](https://github.com/rajkumar23411/movie-wishlist.git)
-Live link - [Watchlist](https://manikangkandas.github.io/techwondoe/)
+Live link - [Watchlist](https://movieflix-watchlist.netlify.app/)
