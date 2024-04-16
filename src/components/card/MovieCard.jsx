@@ -1,8 +1,8 @@
-import propType from "prop-types";
 import PrimaryBtn from "./../button/PrimaryBtn";
 import { useWishlistContext } from "../../context/WishListContext.jsx";
 import { useModalContext } from "../../context/ModalContext.jsx";
-
+import { movieProps } from "../../utils/index.js";
+import SecondaryBtn from "../button/SecondaryBtn.jsx";
 const MovieCard = ({ movie }) => {
     const { addToWishlist } = useWishlistContext();
     const { setIsModalOpen, getSingleMovieDetails } = useModalContext();
@@ -12,10 +12,7 @@ const MovieCard = ({ movie }) => {
         getSingleMovieDetails(id);
     };
     return (
-        <div
-            onClick={() => handleCardClick(movie.imdbID)}
-            className="h-max w-40 sm:w-52 lg:w-56 xl:w-60  rounded-xl overflow-hidden relative"
-        >
+        <div className="h-max w-40 sm:w-52 lg:w-56 xl:w-60  rounded-xl overflow-hidden relative">
             <div className="h-48 sm:h-64 w-full overflow-hidden group">
                 <img
                     src={movie?.Poster}
@@ -37,20 +34,25 @@ const MovieCard = ({ movie }) => {
                     </h1>
                     <p className="text-light-3 small-medium">{movie.Year}</p>
                 </div>
-                <PrimaryBtn size="sm" handleClick={() => addToWishlist(movie)}>
-                    Add to wishlist
-                </PrimaryBtn>
+                <div className="flex-center gap-2">
+                    <SecondaryBtn
+                        size="sm"
+                        handleClick={() => handleCardClick(movie.imdbID)}
+                    >
+                        View
+                    </SecondaryBtn>
+                    <PrimaryBtn
+                        size="sm"
+                        handleClick={() => addToWishlist(movie)}
+                    >
+                        Add
+                    </PrimaryBtn>
+                </div>
             </div>
         </div>
     );
 };
 
-MovieCard.propTypes = {
-    movie: propType.shape({
-        Poster: propType.string,
-        Title: propType.string,
-        Year: propType.string,
-        imdbID: propType.string,
-    }),
-};
+MovieCard.propTypes = movieProps;
+
 export default MovieCard;

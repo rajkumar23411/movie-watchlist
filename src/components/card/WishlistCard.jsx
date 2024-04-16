@@ -1,17 +1,10 @@
-import { useModalContext } from "../../context/ModalContext";
 import { useWishlistContext } from "../../context/WishListContext";
 import PrimaryBtn from "../button/PrimaryBtn";
-import SecondaryBtn from "../button/SecondaryBtn";
 
+import { movieProps } from "../../utils/index.js";
 const WishlistCard = ({ movie }) => {
     const { removeFromWishlist } = useWishlistContext();
-    const { setIsModalOpen, getSingleMovieDetails } = useModalContext();
 
-    const handleCardClick = (id) => {
-        setIsModalOpen(true);
-        getSingleMovieDetails(id);
-        console.log("clicking", id);
-    };
     return (
         <div className="h-max w-40 sm:w-52 lg:w-56 xl:w-60  rounded-xl overflow-hidden relative">
             <div className="h-48 sm:h-64 w-full overflow-hidden group">
@@ -35,24 +28,17 @@ const WishlistCard = ({ movie }) => {
                     </h1>
                     <p className="text-light-3 small-medium">{movie.Year}</p>
                 </div>
-
-                <div className="flex gap-1 sm:gap-2">
-                    <SecondaryBtn
-                        size="sm"
-                        onClick={() => handleCardClick(movie.imdbID)}
-                    >
-                        View
-                    </SecondaryBtn>
-                    <PrimaryBtn
-                        size="sm"
-                        handleClick={() => removeFromWishlist(movie.imdbID)}
-                    >
-                        Remove
-                    </PrimaryBtn>
-                </div>
+                <PrimaryBtn
+                    size="sm"
+                    handleClick={() => removeFromWishlist(movie.imdbID)}
+                >
+                    Remove
+                </PrimaryBtn>
             </div>
         </div>
     );
 };
+
+WishlistCard.propTypes = movieProps;
 
 export default WishlistCard;

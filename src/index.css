@@ -133,7 +133,7 @@
 }
 
 .btn-secondary {
-    @apply border border-gray-400 w-full rounded-md text-white text-sm sm:text-base cursor-pointer  hover:bg-gray-900;
+    @apply bg-dark-3 w-full rounded-md text-white text-sm sm:text-base cursor-pointer hover:bg-dark-2;
 }
 
 .btn-sm {
