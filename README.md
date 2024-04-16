@@ -42,7 +42,7 @@ Create a simple movie watchlist app that allows multiple users to search for mov
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/rajkumar23411/movie-wishlist.git
+   git clone https://github.com/rajkumar23411/movie-watchlist.git
    ```
 2. Install packages using NPM or YARN
 
@@ -75,5 +75,5 @@ Create a simple movie watchlist app that allows multiple users to search for mov
 
 Author Info - [@rajkumar.kalita](https://www.linkedin.com/company/authenticatedotcom/) - rajkumar.kalita@yahoo.com
 <br />
-Project github repo Link - [Watchlist](https://github.com/rajkumar23411/movie-wishlist.git)
+Project github repo Link - [Watchlist](https://github.com/rajkumar23411/movie-watchlist.git)
 Live link - [Watchlist](https://movieflix-watchlist.netlify.app/)
