@@ -70,9 +70,9 @@ const useAuthUser = (email) => {
     const logOut = () => {
         // Perform logout logic
         const users = JSON.parse(localStorage.getItem("users"));
-        const user = users.find((user) => user.email === email);
+        const isUserExits = users.find((u) => u.email === user.email);
 
-        if (user) {
+        if (isUserExits) {
             user.isLoggedIn = false;
             localStorage.setItem("users", JSON.stringify(users));
             setUser({});

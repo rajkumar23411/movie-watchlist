@@ -30,7 +30,7 @@ const Modal = () => {
     return (
         isModalOpen &&
         movie !== null && (
-            <div className="fixed top-0 left-0 right-0 bottom-0 h-full w-full p-4 bg-dark-1/40 z-30 flex-center modal-container">
+            <div className="fixed top-0 left-0 right-0 bottom-0 h-full w-full p-4 bg-dark-1/80 z-30 flex-center modal-container">
                 {isSingleMovieLoading ? (
                     <div className="h-[36rem] lg:h-[40rem] w-full md:w-[90%] lg:w-[80%] xl:w-[85%] bg-dark-4 rounded-lg" />
                 ) : (
