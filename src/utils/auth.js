@@ -82,7 +82,6 @@ const useAuthUser = (email) => {
     };
 
     // after 3000ms set isError to null
-
     useEffect(() => {
         setTimeout(() => {
             setError("");

@@ -10,10 +10,12 @@ import ProtectedRoute from "./utils/ProtectedRoute";
 import Modal from "./components/modal/Modal.jsx";
 import { useModalContext } from "./context/ModalContext.jsx";
 import { useEffect } from "react";
+import toaster from "react-hot-toast";
+import { useAuth } from "./context/AuthContext.jsx";
 
 function App() {
     const { isModalOpen } = useModalContext();
-
+    const { error, success } = useAuth();
     useEffect(() => {
         if (isModalOpen) {
             document.body.style.overflow = "hidden";
@@ -21,6 +23,14 @@ function App() {
             document.body.style.overflow = "auto";
         }
     }, [isModalOpen]);
+    useEffect(() => {
+        if (error) {
+            toaster.error(error);
+        }
+        if (success) {
+            toaster.success(success);
+        }
+    }, [error, success]);
     return (
         <main className="flex w-full">
             <Modal />

@@ -18,7 +18,7 @@ const useWishlist = () => {
                 (item) => item.imdbID === movie.imdbID
             );
             if (isMovieAlreadyAdded) {
-                setError("Movie already in your wishlist");
+                setError("Already added in your wishlist");
                 return null;
             }
             findUser.wishlist.push(movie);

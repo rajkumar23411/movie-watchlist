@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import PrimaryBtn from "../../components/button/PrimaryBtn";
 import Logo from "../../components/logo/Logo";
 import Label from "../../components/form/Label";
@@ -6,24 +5,14 @@ import { Link } from "react-router-dom";
 import Input from "../../components/form/Input";
 import FormContainer from "../../components/form/FormContainer";
 import { useAuth } from "../../context/AuthContext";
-import toaster from "react-hot-toast";
 
 const SignUp = () => {
-    const { register, email, setEmail, error, success } = useAuth();
+    const { register, email, setEmail } = useAuth();
     const handleSubmit = (e) => {
         e.preventDefault();
         register();
         setEmail("");
     };
-
-    useEffect(() => {
-        if (error) {
-            toaster.error(error);
-        }
-        if (success) {
-            toaster.success(success);
-        }
-    }, [error, success]);
     return (
         <div className="w-full sm:w-420 flex-center flex-col ">
             <Logo />

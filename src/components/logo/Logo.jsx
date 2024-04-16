@@ -6,7 +6,7 @@ const Logo = () => {
             <img
                 src="/assets/images/logo.png"
                 alt="logo"
-                className="h-10 object-contain invert pb-1"
+                className="h-8 object-contain invert pb-1"
             />
             <h1 className="base-semibold sm:h3-semibold">MovieFlix</h1>
         </Link>

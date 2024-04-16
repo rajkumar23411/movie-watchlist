@@ -5,10 +5,9 @@ import { Link } from "react-router-dom";
 import Logo from "../../components/logo/Logo";
 import FormContainer from "../../components/form/FormContainer";
 import { useAuth } from "../../context/AuthContext";
-import toaster from "react-hot-toast";
-import { useEffect } from "react";
+
 const Login = () => {
-    const { email, setEmail, login, error, success } = useAuth();
+    const { email, setEmail, login } = useAuth();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -16,14 +15,6 @@ const Login = () => {
         setEmail("");
     };
 
-    useEffect(() => {
-        if (error) {
-            toaster.error(error);
-        }
-        if (success) {
-            toaster.success(success);
-        }
-    }, [error, success]);
     return (
         <div className="w-full sm:w-420 flex-center flex-col">
             <Logo />

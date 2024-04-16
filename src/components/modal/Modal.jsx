@@ -2,14 +2,13 @@ import { useEffect, useState } from "react";
 import { useModalContext } from "../../context/ModalContext";
 import PrimaryBtn from "../button/PrimaryBtn";
 import { useWishlistContext } from "../../context/WishListContext";
-import toaster from "react-hot-toast";
+
 const Modal = () => {
     const { isModalOpen, setIsModalOpen, movie, isSingleMovieLoading } =
         useModalContext();
     const [isExpanded, setIsExpanded] = useState(false);
     const media = window.matchMedia("(min-width: 1024px)");
     const { addToWishlist } = useWishlistContext();
-    const { error, success } = useWishlistContext();
 
     let maxLength = media.matches ? 300 : 100;
     const toggleExpand = () => {
@@ -28,14 +27,6 @@ const Modal = () => {
         return () => document.removeEventListener("click", handleClickOutside);
     }, [isModalOpen, setIsModalOpen]);
 
-    useEffect(() => {
-        if (error) {
-            toaster.error(error);
-        }
-        if (success) {
-            toaster.success(success);
-        }
-    }, [error, success]);
     return (
         isModalOpen &&
         movie !== null && (

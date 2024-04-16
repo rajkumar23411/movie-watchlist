@@ -1,21 +1,9 @@
-import { useEffect } from "react";
 import MovieCard from "../../components/card/MovieCard";
 import Loader from "../../components/loader/Loader";
 import { useMovieContext } from "../../context/MovieContext";
-import { useWishlistContext } from "../../context/WishListContext";
-import toaster from "react-hot-toast";
 const Home = () => {
     const { isLoading, movies, loadMore, totalResults } = useMovieContext();
-    const { error, success } = useWishlistContext();
 
-    useEffect(() => {
-        if (error) {
-            toaster.error(error);
-        }
-        if (success) {
-            toaster.success(success);
-        }
-    }, [error, success]);
     return (
         <div className="flex-center py-10">
             {isLoading ? (

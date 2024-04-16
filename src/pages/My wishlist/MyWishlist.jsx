@@ -2,22 +2,12 @@ import { useEffect } from "react";
 import { useWishlistContext } from "../../context/WishListContext.jsx";
 import WishlistCard from "../../components/card/WishlistCard.jsx";
 import { Link } from "react-router-dom";
-import toaster from "react-hot-toast";
 const MyWishlist = () => {
-    const { getMyWishlist, wishlist, success, error } = useWishlistContext();
-
-    useEffect(() => {
-        if (error) {
-            toaster.error(error);
-        }
-        if (success) {
-            toaster.success(success);
-        }
-    }, [error, success]);
+    const { getMyWishlist, wishlist } = useWishlistContext();
 
     useEffect(() => {
         getMyWishlist();
-    }, []);
+    });
 
     return (
         <div className="flex-center py-4 sm:py-6 md:py-10">
