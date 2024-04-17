@@ -43,7 +43,7 @@ const useWishlist = () => {
             return null;
         }
         const users = JSON.parse(localStorage.getItem("users"));
-        const findUser = users.find((user) => user.email === user.email);
+        const findUser = users.find((u) => u.email === user.email);
         if (findUser) {
             findUser.wishlist = findUser.wishlist.filter(
                 (item) => item.imdbID !== id
