@@ -16,10 +16,10 @@ const Navbar = () => {
         <>
             <nav className="flex relative items-center justify-between w-full px-4 py-2 sm:px-10 sm:py-4 z-10 backdrop-blur-md backdrop:bg-dark-4">
                 <div className="flex-center gap-10">
-                    <div className="sm:pr-10">
+                    <div className="md:pr-4 xl:pr-8">
                         <Logo />
                     </div>
-                    <div className="hidden lg:flex items-center gap-10">
+                    <div className="hidden lg:flex items-center lg:gap-8 xl:gap-10">
                         <NavTag to="/">Home</NavTag>
                         <NavTag to="/my-watchlist">Watchlist</NavTag>
                         {isAuthenticated ? (
