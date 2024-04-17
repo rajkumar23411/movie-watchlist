@@ -6,8 +6,12 @@ const MobileSearchBar = () => {
     const [isMobileSearchBarActive, setIsMobileSearchBarActive] =
         useState(false);
 
-    // if close outsie search bar then set handleActive to false
     useEffect(() => {
+        // on scrolling the window close the search bar
+        const handleScroll = () => {
+            setIsMobileSearchBarActive(false);
+        };
+        // if close outsie search bar then set handleActive to false
         const handleActive = (e) => {
             if (
                 e.target.parentElement.id !== "search-bar" &&
@@ -18,8 +22,10 @@ const MobileSearchBar = () => {
         };
 
         window.addEventListener("click", handleActive);
+        window.addEventListener("scroll", handleScroll);
         return () => {
             window.removeEventListener("click", handleActive);
+            window.removeEventListener("scroll", handleScroll);
         };
     }, [isMobileSearchBarActive]);
     return (
@@ -29,7 +35,7 @@ const MobileSearchBar = () => {
                     isMobileSearchBarActive ? "top-2" : "-top-full"
                 } left-0 right-0 w-full px-2 `}
             >
-                <div className="w-full flex-center h-12 bg-dark-4 px-2 rounded-md search">
+                <div className="w-full flex-center h-12 bg-light-2 dark:bg-dark-4 px-2 rounded-md search">
                     <input
                         type="text"
                         placeholder="Type your moive title here ..."

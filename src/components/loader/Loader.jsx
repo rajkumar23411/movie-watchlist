@@ -1,6 +1,6 @@
 const CardLoader = () => {
     return (
-        <div className="h-56 w-40 sm:h-64 sm:w-60  lg:h-72 lg:w-60 rounded-xl bg-dark-4" />
+        <div className="h-56 w-40 sm:h-64 sm:w-60  lg:h-72 lg:w-60 rounded-xl bg-light-2 dark:bg-dark-4" />
     );
 };
 const Loader = () => {

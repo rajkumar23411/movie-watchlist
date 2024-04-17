@@ -10,7 +10,7 @@
     }
 
     body {
-        @apply bg-dark-1 text-white min-h-screen font-inter;
+        @apply bg-light-1 dark:bg-dark-1 text-black dark:text-white min-h-screen font-inter;
     }
 }
 
@@ -123,17 +123,17 @@
     /* GRID */
 
     .grid-layout {
-        @apply grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-6 xl:gap-10 place-items-center justify-center;
+        @apply grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-6 xl:gap-10 place-items-center justify-center;
     }
 }
 
 /* BUTTON */
 .btn-primary {
-    @apply bg-primary-500 w-full rounded-md text-white cursor-pointer text-sm sm:text-base hover:bg-primary-600;
+    @apply bg-primary-600 dark:bg-primary-500 w-full rounded-md text-white cursor-pointer text-sm sm:text-base dark:hover:bg-primary-600;
 }
 
 .btn-secondary {
-    @apply bg-dark-3 w-full rounded-md text-white text-sm sm:text-base cursor-pointer hover:bg-dark-2;
+    @apply border border-light-3/60 w-full rounded-md text-light-4 dark:text-white text-sm sm:text-base cursor-pointer dark:hover:bg-dark-2/50;
 }
 
 .btn-sm {

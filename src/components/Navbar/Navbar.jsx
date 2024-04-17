@@ -6,6 +6,7 @@ import { useState } from "react";
 import Hamburger from "../hamburger/Hamburger";
 import SideNav from "../mobile/SideNav";
 import MobileSearchBar from "../mobile/MobileSearchBar";
+import ThemeBtn from "../button/ThemeBtn";
 
 const Navbar = () => {
     const { logOut, isAuthenticated } = useAuth();
@@ -28,12 +29,12 @@ const Navbar = () => {
                         )}
                     </div>
                 </div>
-                <div className="hidden lg:flex-center gap-10">
+                <div className="hidden lg:flex-center gap-5">
                     <SearchBar />
+                    <ThemeBtn />
                 </div>
                 <div className="flex-center lg:hidden gap-4" id="search-bar">
                     <MobileSearchBar />
-
                     <Hamburger
                         isActive={isMobileMenuActive}
                         handleClick={(val) => setIsMobileMenuActive(val)}

@@ -1,8 +1,9 @@
-<svg viewBox="0 0 25.00 25.00" height="24" width="24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="">
-<g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-<g id="SVGRepo_iconCarrier"> <path d="M2 12.32H22" stroke="#877EFF" stroke-width="0.575" stroke-linecap="round" stroke-linejoin="round"></path>
-<path d="M2 18.32H22" stroke="#877EFF" stroke-width="0.575" stroke-linecap="round" stroke-linejoin="round"></path> 
-<path d="M2 6.32001H22" stroke="#877EFF" stroke-width="0.575" stroke-linecap="round" stroke-linejoin="round"></path> </g>
-
-
+<svg viewBox="0 0 24 24" height="24" width="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="SVGRepo_bgCarrier" fill-rule="evenodd" clip-rule="evenodd" stroke-width="0"></g>
+<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.8640000000000001"></g>
+<g id="SVGRepo_iconCarrier"> 
+<path d="M20 7L4 7" stroke="#5C5C7B" stroke-width="0.9120000000000001" stroke-linecap="round"></path> 
+<path d="M20 12L4 12" stroke="#5C5C7B" stroke-width="0.9120000000000001" stroke-linecap="round"></path> 
+<path d="M20 17L4 17" stroke="#5C5C7B" stroke-width="0.9120000000000001" stroke-linecap="round"></path> 
+</g>
 </svg>

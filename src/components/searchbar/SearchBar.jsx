@@ -3,7 +3,7 @@ const SearchBar = () => {
     const { query, setQuery } = useMovieContext();
     return (
         <form
-            className="flex h-12 bg-dark-4 w-max sm:w-420 rounded-md flex-center px-4"
+            className="flex h-12 bg-light-2 dark:bg-dark-4 w-max sm:w-420 rounded-md flex-center px-4"
             onSubmit={(e) => e.preventDefault()}
         >
             <input

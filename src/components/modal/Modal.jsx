@@ -30,11 +30,11 @@ const Modal = () => {
     return (
         isModalOpen &&
         movie !== null && (
-            <div className="fixed top-0 left-0 right-0 bottom-0 h-full w-full p-4 bg-dark-1/80 z-30 flex-center modal-container">
+            <div className="fixed top-0 left-0 right-0 bottom-0 h-full w-full p-4 bg-dark-1/60 dark:bg-dark-1/80 z-30 flex-center modal-container">
                 {isSingleMovieLoading ? (
-                    <div className="h-[36rem] lg:h-[40rem] w-full md:w-[90%] lg:w-[80%] xl:w-[85%] bg-dark-4 rounded-lg" />
+                    <div className="h-[36rem] lg:h-[40rem] w-full md:w-[90%] lg:w-[80%] xl:w-[85%] bg-light-1 dark:bg-dark-4 rounded-lg" />
                 ) : (
-                    <div className="flex flex-col lg:flex-row lg:h-[40rem] h-max w-full md:w-[90%] lg:w-[80%] xl:w-[85%] bg-dark-3 rounded-lg overflow-x-hidden overflow-y-auto custom-scrollbar relative">
+                    <div className="flex flex-col lg:flex-row lg:h-[40rem] h-max w-full md:w-[90%] lg:w-[80%] xl:w-[85%] bg-light-1 dark:bg-dark-3 rounded-lg overflow-x-hidden overflow-y-auto custom-scrollbar relative">
                         <button
                             className="h-8 w-8 bg-dark-3 hover:bg-dark-2 cursor-pointer text-white rounded-full flex-center absolute top-2 right-2 lg:left-2 z-30"
                             onClick={() => {
@@ -53,7 +53,7 @@ const Modal = () => {
                         </div>
                         <div className="px-2 py-4 lg:p-6 lg:flex-1 flex flex-col lg:justify-between gap-2">
                             <div className="flex flex-col">
-                                <h1 className="base-medium lg:h3-semibold text-light-2">
+                                <h1 className="base-medium lg:h3-semibold text-dark-3 dark:text-light-2">
                                     {movie?.Title}
                                 </h1>
                                 <h1 className="text-light-3 small-medium lg:base-medium">

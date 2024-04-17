@@ -12,10 +12,13 @@ import { useModalContext } from "./context/ModalContext.jsx";
 import { useEffect } from "react";
 import toaster from "react-hot-toast";
 import { useAuth } from "./context/AuthContext.jsx";
+import { useTheme } from "./context/ThemeContext.jsx";
 
 function App() {
     const { isModalOpen } = useModalContext();
     const { error, success } = useAuth();
+    const { themeMode } = useTheme();
+
     useEffect(() => {
         if (isModalOpen) {
             document.body.style.overflow = "hidden";
@@ -31,6 +34,10 @@ function App() {
             toaster.success(success);
         }
     }, [error, success]);
+    useEffect(() => {
+        document.querySelector("html").classList.remove("light", "dark");
+        document.querySelector("html").classList.add(themeMode);
+    }, [themeMode]);
     return (
         <main className="flex w-full">
             <Modal />
